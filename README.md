@@ -1,4 +1,4 @@
-# Ex-4 Rail-Fence-Program
+# Ex--5-Rail-Fence-Program
 
 # IMPLEMENTATION OF RAIL FENCE – ROW & COLUMN TRANSFORMATION TECHNIQUE
 
@@ -18,8 +18,31 @@ STEP-3: Now read the keyword depending on the number of columns of the plain tex
 STEP-4: Arrange the characters of the keyword in sorted order and the corresponding columns of the plain text.
 STEP-5: Read the characters row wise or column wise in the former order to get the cipher text.
 
-# PROGRAM
+# PROGRAM :
+```
+text = input("Enter a Secret Message:\n")
+rails = int(input("Enter number of rails:\n"))
 
-# OUTPUT
+fence = ['' for _ in range(rails)]
+rail = 0
+dir = 1
 
-# RESULT
+for char in text:
+    fence[rail] += char
+    if rail == 0:
+        dir = 1
+    elif rail == rails - 1:
+        dir = -1
+    rail += dir
+
+print("Encrypted Message:")
+print(''.join(fence))
+```
+# OUTPUT :
+
+![Screenshot 2025-04-22 183124](https://github.com/user-attachments/assets/7e7f925a-1004-4771-921b-3a1d3b4e2d68)
+
+
+# RESULT :
+
+ The program is executed successfully.
